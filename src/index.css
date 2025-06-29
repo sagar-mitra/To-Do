@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Garaigit;
+    src: url("../src/assets/font/Garaigit.otf");
+}
+
+@font-face {
+    font-family: Satoshi-Variable;
+    src: url("../src/assets/font/Satoshi-Variable.ttf");
+}
+
+@import "tailwindcss";
+
+:root {
+    --bg-primary : white;
+    /* --font-for-appName: "Garaigit" */
+}
+
+@theme{
+    --font-garaigit: Garaigit;
+    --font-satoshi: Satoshi-Variable;
+}
+
+
+.item:hover item1{
+    opacity: 1
+}
