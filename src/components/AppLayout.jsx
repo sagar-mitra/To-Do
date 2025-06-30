@@ -8,9 +8,9 @@ const AppLayout = () => {
   return (
     <div className="p-2">
       <Header />
-      <Sidebar/>
+      {/* <Sidebar/> */}
       {/* <Body /> */}
-      {/* <Outlet /> */}
+      <Outlet />
     </div>
   );
 };
