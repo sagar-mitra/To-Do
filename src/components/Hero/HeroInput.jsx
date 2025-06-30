@@ -1,9 +1,13 @@
-import { useEffect, useId, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MdAdd } from "react-icons/md";
+import { TaskContext } from "../../utils/taskContext";
 
-const HeroInput = ({taskInfo, setTaskInfo}) => {
+const HeroInput = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDate, setTaskDate] = useState("");
+
+  // taking values from context
+  const { taskInfo, setTaskInfo } = useContext(TaskContext);
 
   const handleTaskTitle = (e) => {
     setTaskTitle(e.target.value);
@@ -32,9 +36,10 @@ const HeroInput = ({taskInfo, setTaskInfo}) => {
     }
   };
 
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(taskInfo));
-  }, [taskInfo]);
+  // Local Storage set
+  // useEffect(() => {
+  //   localStorage.setItem("tasks", JSON.stringify(taskInfo));
+  // }, [taskInfo]);
 
   return (
     <div className="py-2.5 px-10 mt-10 border-t border-b border-[#e2e2e2] flex items-center justify-center gap-7">
