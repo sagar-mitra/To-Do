@@ -1,14 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { FaRegCircle } from "react-icons/fa6";
 import { MdDeleteOutline } from "react-icons/md";
 import { TaskContext } from "../../utils/taskContext";
-import { HiH1 } from "react-icons/hi2";
 
 const HeroTasks = () => {
   // taskInfo from userContext
   const { taskInfo } = useContext(TaskContext);
   return (
-    <div className=" p-2 flex flex-col gap-1 items-center">
+    <div className=" p-2 flex flex-col gap-1 items-center overflow-y-auto">
       {!taskInfo ? (
         <h1>Task is empty</h1>
       ) : (
@@ -23,8 +22,8 @@ const HeroTasks = () => {
                   </span>
                   <li className="text-base font-medium">{taskTitle}</li>
                 </div>
-                <span>
-                  <MdDeleteOutline />
+                <span className=" p-1 rounded-full hover:bg-[#f4f4f4] cursor-pointer">
+                  <MdDeleteOutline className="text-lg text-red-500"/>
                 </span>
               </ul>
             </div>
