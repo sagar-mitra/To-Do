@@ -20,7 +20,7 @@ const TodayList = () => {
     <div className="text-black flex gap-4">
       <Sidebar />
       <div className="border h-[640px] rounded p-2 w-4/5">
-        <h1 className="text-3xl font-semibold mt-10 pl-5 mb-2 border-b py-4">
+        <h1 className="text-3xl font-semibold mb-2 border-b py-4">
           What’s on Your Plate Today?
         </h1>
         {todayData.map((task) => {
