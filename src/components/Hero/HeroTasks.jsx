@@ -1,34 +1,8 @@
 import { useContext } from "react";
-import { FaRegCircle } from "react-icons/fa6";
-import { MdDeleteOutline } from "react-icons/md";
 import { TaskContext } from "../../utils/taskContext";
-import { FaRegCircleCheck } from "react-icons/fa6";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
-
+import Task from "./Task";
 const HeroTasks = () => {
-  // taskInfo from userContext
   const { taskInfo, setTaskInfo } = useContext(TaskContext);
-
-  // Check and uncheck
-  const handleToggle = (id) => {
-    setTaskInfo(
-      taskInfo.map((e) => {
-        if (e.id === id) {
-          return {
-            ...e,
-            isCompleted: !e.isCompleted,
-          };
-        } else {
-          return e;
-        }
-      })
-    );
-  };
-
-  // Delete button
-  const handleDelete = (id) => {
-    setTaskInfo(taskInfo.filter((e) => e.id !== id));
-  };
 
   return (
     <div className=" p-2 flex flex-col gap-1 items-center overflow-y-auto">
@@ -40,35 +14,14 @@ const HeroTasks = () => {
         taskInfo.map((task) => {
           const { id, taskTitle, taskDate, isCompleted } = task;
           return (
-            <div key={id} className=" w-full py-2 border-b border-[#e2e2e2]">
-              <ul className=" flex w-1/2 py-1 px-2 items-center justify-between mx-auto">
-                <div className="flex items-center gap-5">
-                  <span
-                    onClick={() => handleToggle(id)}
-                    className="cursor-pointer"
-                  >
-                    {isCompleted ? (
-                      <IoMdCheckmarkCircleOutline className="text-xl" />
-                    ) : (
-                      <FaRegCircle className="text-xl" />
-                    )}
-                  </span>
-                  <li
-                    className={`text-lg font-medium ${
-                      isCompleted && "line-through"
-                    }`}
-                  >
-                    {taskTitle}
-                  </li>
-                </div>
-                <span
-                  className="p-1 rounded-full hover:bg-[#f4f4f4] cursor-pointer"
-                  onClick={() => handleDelete(id)}
-                >
-                  <MdDeleteOutline className="text-lg text-red-500" />
-                </span>
-              </ul>
-            </div>
+            <Task
+              key={id}
+              id={id}
+              taskTitle={taskTitle}
+              isCompleted={isCompleted}
+              taskInfo={taskInfo}
+              setTaskInfo={setTaskInfo}
+            />
           );
         })
       )}

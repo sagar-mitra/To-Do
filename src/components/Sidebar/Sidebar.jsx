@@ -6,7 +6,7 @@ import SidebarLists from "./SidebarLists.jsx";
 
 const Sidebar = () => {
   return (
-    <div className="font-satoshi rounded-lg w-1/5 h-[640px] border p-2 bg-[#f4f4f4]">
+    <div className="rounded-lg w-1/5 h-[640px] border p-2 bg-[#f4f4f4]">
       <SidebarSearch />
 
       <SidebarTasks />

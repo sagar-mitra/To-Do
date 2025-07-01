@@ -9,7 +9,7 @@ const App = () => {
   setLocalStorage(taskInfo);
 
   return (
-    <div>
+    <div className="font-satoshi">
       <TaskContext.Provider value={{ taskInfo, setTaskInfo }}>
         <AppLayout />
       </TaskContext.Provider>

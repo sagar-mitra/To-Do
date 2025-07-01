@@ -15,14 +15,14 @@ const appRoutes = createBrowserRouter([
         element: <Body />,
       },
       {
+        path: "/today",
+        element: <TodayList />,
+      },
+      {
         path: "/upcoming",
         element: <Upcoming />,
       },
     ],
-  },
-  {
-    path: "/today",
-    element: <TodayList />,
   },
 ]);
 
