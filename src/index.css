@@ -8,6 +8,18 @@
     src: url("../src/assets/font/Satoshi-Variable.ttf");
 }
 
+@font-face {
+    font-family: LTSuperiorMonoMedium;
+    src: url("../src/assets/font/LTSuperiorMono-Medium.otf");
+}
+
+@font-face {
+    font-family: LTSuperiorMono;
+    src: url("../src/assets/font/LTSuperiorMono-Regular.otf");
+}
+
+
+
 @import "tailwindcss";
 
 :root {
@@ -18,5 +30,8 @@
 @theme{
     --font-garaigit: Garaigit;
     --font-satoshi: Satoshi-Variable;
+    --font-ltsuperiorMonoMedium: LTSuperiorMonoMedium;
+    --font-ltsuperiorMono: LTSuperiorMono;
+    
 }
 

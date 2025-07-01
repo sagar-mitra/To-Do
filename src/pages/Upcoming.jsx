@@ -19,7 +19,7 @@ const Upcoming = () => {
     <div className="text-black flex gap-4">
       <Sidebar />
       <div className="border h-[640px] rounded p-2 w-4/5">
-        <h1 className="text-3xl font-semibold  mb-2 border-b py-4">
+        <h1 className="font-ltsuperiorMono text-3xl font-semibold  mb-2 border-b py-4 tracking-wide">
           Upcoming Tasks
         </h1>
         {notTodayData.map((task) => {
