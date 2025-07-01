@@ -25,6 +25,11 @@ const HeroTasks = () => {
     );
   };
 
+  // Delete button
+  const handleDelete = (id) => {
+    setTaskInfo(taskInfo.filter((e) => e.id !== id));
+  };
+
   return (
     <div className=" p-2 flex flex-col gap-1 items-center overflow-y-auto">
       {taskInfo.length === 0 ? (
@@ -56,7 +61,10 @@ const HeroTasks = () => {
                     {taskTitle}
                   </li>
                 </div>
-                <span className="p-1 rounded-full hover:bg-[#f4f4f4] cursor-pointer">
+                <span
+                  className="p-1 rounded-full hover:bg-[#f4f4f4] cursor-pointer"
+                  onClick={() => handleDelete(id)}
+                >
                   <MdDeleteOutline className="text-lg text-red-500" />
                 </span>
               </ul>
