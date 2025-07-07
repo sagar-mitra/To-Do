@@ -1,15 +1,17 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../utils/AuthContext";
-import { useNavigate } from "react-router-dom";
-import ProfilePicture from "./ProfilePicture";
+import profilePicture from "../utils/ProfilePictures";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const [fullName, setFullname] = useState("");
   const [userName, setUserName] = useState("");
   const [emailID, setEmailID] = useState("");
-  const [profilePhoto, setProfilePhoto] = useState(null);
+  const [profilePhoto, setProfilePhoto] = useState("");
 
   const { loginInfo, setLoginInfo } = useContext(AuthContext);
+
+  let pp = profilePicture;
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevent page reload
@@ -26,19 +28,21 @@ const LoginForm = () => {
     setLoginInfo(newUser); // updating the auth context
 
     // reset the states
-    setEmailID(null);
-    setUserName(null);
-    setFullname(null);
-    setProfilePhoto(null);
+    setEmailID("");
+    setUserName("");
+    setFullname("");
+    setProfilePhoto("");
   };
 
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files[0];
-    setProfilePhoto(file);
+  const handleProfilePicture = (idx) => {
+    setProfilePhoto(pp[idx]);
   };
 
   return Object.keys(loginInfo).length !== 0 ? (
-    <h1> your profile is ready </h1>
+    <div className="flex flex-col gap-5 items-center">
+      <h1 className="text-2xl tracking-wide"> You're now logged in. Great to see you again! </h1>
+      <Link to="/" className="border-2 px-6 py-3 tracking-wide rounded-lg hover:bg-blue-400 hover:text-white hover:font-medium duration-300">Go to Dashboard</Link>
+    </div>
   ) : (
     <section className="bg-[#f4f4f4] w-[480px] py-10 px-4 rounded-lg ">
       <div className="container flex items-center justify-center">
@@ -131,7 +135,7 @@ const LoginForm = () => {
             />
           </div>
 
-          <label
+          {/* <label
             htmlFor="dropzone-file"
             className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border border-dashed rounded-lg cursor-pointer "
           >
@@ -164,7 +168,29 @@ const LoginForm = () => {
               className="hidden"
               onChange={handlePhotoUpload}
             />
-          </label>
+          </label> */}
+
+          <div className="mt-6">
+            <p className="text-lg font-medium mb-3">
+              Please select a profile picture
+            </p>
+            <div className="flex justify-between cursor-pointer">
+              {pp.map((pic, idx) => {
+                return (
+                  <span
+                    className="w-20 h-20 border p-1 rounded-full "
+                    onClick={() => handleProfilePicture(idx)}
+                  >
+                    <img
+                      className="w-full h-full rounded-full object-cover object-center hover:scale-110 active:scale-95 duration-200"
+                      src={pic}
+                      alt="profile picture"
+                    />
+                  </span>
+                );
+              })}
+            </div>
+          </div>
 
           <div className="mt-6">
             <button

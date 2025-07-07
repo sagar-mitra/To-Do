@@ -14,8 +14,6 @@ const Login = () => {
       </div>
       {/* right side */}
       <div className=" w-[60%] flex justify-center items-center flex-col gap-20">
-        <h1 className="font-garaigit font-semibold text-6xl">Welcome</h1>
-    
         <LoginForm />
       </div>
     </div>
