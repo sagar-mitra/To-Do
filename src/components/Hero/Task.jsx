@@ -3,6 +3,7 @@ import { FaRegCircle } from "react-icons/fa6";
 import { MdDeleteOutline } from "react-icons/md";
 import { BsCheckCircle } from "react-icons/bs";
 import { TaskContext } from "../../utils/taskContext";
+import { toast } from "react-toastify";
 
 const Task = ({ id, taskTitle, isCompleted}) => {
   // taskInfo from userContext
@@ -22,11 +23,14 @@ const Task = ({ id, taskTitle, isCompleted}) => {
         }
       })
     );
+
+    !isCompleted && toast.success("Task marked as completed!")
   };
 
   // Delete button
   const handleDelete = (id) => {
     setTaskInfo(taskInfo.filter((e) => e.id !== id));
+  toast.error("Task deleted")
   };
 
   return (
