@@ -24,9 +24,6 @@ const SidebarTasks = () => {
     return d1.getDate() !== date;
   })
 
-  console.log(taskForToday);
-  console.log(upComingTask);
-
 
   return (
     <div className="p-3 h-48 w-full mt-2 flex flex-col justify-evenly ">
