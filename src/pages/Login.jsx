@@ -3,6 +3,7 @@ import loginIMG from "../assets/loginIMG.jpg";
 import { FaRegUser } from "react-icons/fa6";
 import { FiUser } from "react-icons/fi";
 import LoginForm from "../components/LoginForm";
+import ProfilePicture from "../components/ProfilePicture";
 
 const Login = () => {
   return (
