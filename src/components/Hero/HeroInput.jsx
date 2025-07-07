@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { TaskContext } from "../../utils/taskContext";
+import { toast } from "react-toastify";
 
 const HeroInput = () => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -26,7 +27,14 @@ const HeroInput = () => {
       isCompleted: false,
     };
 
-    if(newTask.taskTitle === "") return;
+    // handling empty inputs
+    if(newTask.taskTitle === "" && newTask.taskDate === "") {
+       toast("Please enter a task and select a date.")
+      return;
+    } else if(newTask.taskTitle === "" || newTask.taskDate === "") {
+      newTask.taskTitle === "" ? toast.warning("Task name is required.") : toast.warning("Please select a date.")
+      return
+    }
 
     setTaskInfo((prev) => [...prev, newTask]);
     setTaskDate("");
@@ -50,6 +58,7 @@ const HeroInput = () => {
         <input
           type="text"
           placeholder="Add new task"
+          required
           value={taskTitle}
           onChange={handleTaskTitle}
           onKeyDown={handleEnterButton}
@@ -60,6 +69,7 @@ const HeroInput = () => {
         <input
           type="date"
           placeholder="Pick a date"
+          required
           value={taskDate}
           onChange={handleTaskDate}
           className="border py-1 px-3 border-gray-400 rounded-md"
