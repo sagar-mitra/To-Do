@@ -9,14 +9,14 @@ const Header = () => {
   console.log(loginInfo);
 
   return (
-    <div className="mb-1 p-3 flex justify-between items-center">
-      <h1 className="font-garaigit text-4xl font-bold ">tasky</h1>
+    <div className="p-3 flex justify-between items-center border">
+      <h1 className="font-garaigit text-3xl sm:text-4xl font-bold ">tasky</h1>
       <div>
         {Object.keys(loginInfo).length !== 0 ? (
           <div className="w-full flex items-center justify-between">
             {/* <h4 className="text-lg ">{loginInfo.userName}</h4> */}
             <img
-              className="w-14 h-14 rounded-full mx-auto p-1 border-2 border-gray-500"
+              className="w-10 h-10 sm:w-14 sm:h-14 rounded-full mx-auto p-1 border-2 border-gray-500"
               src={loginInfo.profilePhoto}
               alt=""
             />

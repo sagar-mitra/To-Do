@@ -49,8 +49,8 @@ const HeroInput = () => {
 
 
   return (
-    <div className="py-2.5 px-10 mt-10 border-t border-b border-[#e2e2e2]  flex items-center justify-center gap-7">
-      <div className="p-1 flex gap-1 items-center ">
+    <div className="mt-7 border-t border-b py-2 sm:py-2.5 sm:px-10 sm:mt-10  border-[#e2e2e2]  flex flex-col items-center  sm:flex-row sm:justify-center gap-4 sm:gap-7 ">
+      <div className="p-1 w-8/12 flex gap-1 items-center">
         <MdAdd
           className="text-3xl p-1 hover:bg-[#f4f4f4] rounded-full cursor-pointer"
           onClick={handleTaskAddButton}
@@ -59,22 +59,20 @@ const HeroInput = () => {
           type="text"
           placeholder="Add new task"
           required
-          value={taskTitle}
+          value={taskTitle} 
           onChange={handleTaskTitle}
           onKeyDown={handleEnterButton}
-          className="p-1 w-[350px] focus:outline-none text-base font-medium tracking-wide"
+          className="p-1 w-full sm:w-[250px] focus:outline-none text-base font-medium tracking-wide"
         />
       </div>
-      <div>
         <input
           type="date"
           placeholder="Pick a date"
           required
           value={taskDate}
           onChange={handleTaskDate}
-          className="border py-1 px-3 border-gray-400 rounded-md"
+          className="w-7/12 xs:w-5/12 sm:w-8/12 md:w-4/12 lg:w-3/12 xl:w-1/4 border py-1 px-3 border-gray-400 rounded-md"
         />
-      </div>
     </div>
   );
 };

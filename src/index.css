@@ -31,6 +31,7 @@
     --font-satoshi: Satoshi-Variable;
     --font-ltsuperiorMonoMedium: LTSuperiorMonoMedium;
     --font-ltsuperiorMono: LTSuperiorMono;
-    
+    --breakpoint-xs: 400px;
 }
+
 

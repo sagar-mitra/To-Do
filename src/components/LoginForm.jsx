@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../utils/AuthContext";
 import profilePicture from "../utils/ProfilePictures";
 import { Link } from "react-router-dom";

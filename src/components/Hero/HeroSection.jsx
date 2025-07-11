@@ -5,7 +5,7 @@ import HeroTasks from "./HeroTasks";
 
 const HeroSection = () => {
   return (
-    <div className="border h-[640px] rounded p-2 w-4/5 flex flex-col">
+    <div className="border-2 rounded p-2 sm:w-4/5 flex flex-col border-orange-500">
       <HeroHeader />
       <HeroInput />
       <HeroTasks />

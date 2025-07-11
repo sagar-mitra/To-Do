@@ -9,7 +9,7 @@ const AppLayout = () => {
   const location = useLocation();
   const hideHeader = location.pathname === "/login";
   return (
-    <div className="p-2">
+    <div>
       {!hideHeader && <Header />}
       <Outlet />
     </div>

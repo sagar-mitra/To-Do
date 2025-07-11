@@ -24,8 +24,8 @@ const HeroHeader = () => {
 
   return (
     <div className=" flex items-center gap-5">
-      <h1 className="font-ltsuperiorMonoMedium mt-4 text-5xl font-bold tracking-wide ">Today</h1>
-      <span className="font-ltsuperiorMono text-3xl font-semibold pt-6">({`${monthName[month]} ${date},   ${dayName[day]}`})</span>
+      <h1 className="font-ltsuperiorMonoMedium text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide ">Today</h1>
+      <span className="font-ltsuperiorMono text-xl sm:text-2xl md:text-3xl font-semibold">({`${monthName[month]} ${date},   ${dayName[day]}`})</span>
     </div>
   );
 };

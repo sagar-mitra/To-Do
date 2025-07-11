@@ -6,7 +6,7 @@ import SidebarLists from "./SidebarLists.jsx";
 
 const Sidebar = () => {
   return (
-    <div className="rounded-lg w-1/5 h-[640px] border p-2 bg-[#f4f4f4]">
+    <div className="hidden sm:block rounded-lg w-1/5  border-2 border-red-700 p-2 bg-[#f4f4f4]">
       <SidebarSearch />
 
       <SidebarTasks />

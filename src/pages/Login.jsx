@@ -7,13 +7,13 @@ import ProfilePicture from "../components/ProfilePicture";
 
 const Login = () => {
   return (
-    <div className="flex p-3 justify-between">
+    <div className="flex p-3 justify-between items-center h-[720px]">
       {/* left side */}
-      <div className=" w-[40%">
-        <img className="h-[695px]" src={loginIMG} alt="" />
+      <div className=" w-[50%]">
+        <img className="h-[600px]" src={loginIMG} alt="" />
       </div>
       {/* right side */}
-      <div className=" w-[60%] flex justify-center items-center flex-col gap-20">
+      <div className=" w-[50%] flex justify-center items-center flex-col gap-20">
         <LoginForm />
       </div>
     </div>

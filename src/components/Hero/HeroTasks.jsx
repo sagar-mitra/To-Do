@@ -7,7 +7,7 @@ const HeroTasks = () => {
   return (
     <div className=" p-2 flex flex-col gap-1 items-center overflow-y-auto">
       {taskInfo.length === 0 ? (
-        <h1 className="text-lg mt-10">
+        <h1 className="text-center max-xs:text-sm  font-medium sm:text-lg mt-10">
           Your to-do list is as empty as your fridge on a Sunday night.
         </h1>
       ) : (
