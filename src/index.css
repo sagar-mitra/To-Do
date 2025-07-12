@@ -23,7 +23,7 @@
 @import "tailwindcss";
 
 :root {
-    --bg-primary : white;
+    --bg-primary : black;
 }
 
 @theme{
@@ -32,6 +32,7 @@
     --font-ltsuperiorMonoMedium: LTSuperiorMonoMedium;
     --font-ltsuperiorMono: LTSuperiorMono;
     --breakpoint-xs: 400px;
+    --color-primary: #101010;
 }
 
 

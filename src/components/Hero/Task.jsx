@@ -35,7 +35,7 @@ const Task = ({ id, taskTitle, isCompleted}) => {
 
   return (
     <div className=" w-full py-2 border-b border-[#e2e2e2]">
-      <ul className=" flex sm:w-1/2 py-1 px-2 items-center justify-between mx-auto">
+      <ul className=" flex w-3/4 lg:w-1/2 py-1 px-2 items-center justify-between mx-auto">
         {/* tick box, task, delete button  */}
         <div className="flex items-center gap-5">
           <span onClick={() => handleToggle(id)} className="cursor-pointer">

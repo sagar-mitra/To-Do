@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { RiListSettingsFill } from "react-icons/ri";
 import SidebarTasks from "./SidebarTasks.jsx";
@@ -5,9 +6,10 @@ import SidebarSearch from "./SidebarSearch.jsx";
 import SidebarLists from "./SidebarLists.jsx";
 
 const Sidebar = () => {
+  const [burgerMenuClicked, setBurgerMenuClicked] = useState(false)
   return (
-    <div className="hidden sm:block rounded-lg w-1/5  border-2 border-red-700 p-2 bg-[#f4f4f4]">
-      <SidebarSearch />
+    <div className="hidden lg:block rounded-lg w-1/5 h-full   p-2 bg-[#f4f4f4]">
+      <SidebarSearch  setBurgerMenuClicked={setBurgerMenuClicked} />
 
       <SidebarTasks />
 

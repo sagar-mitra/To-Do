@@ -9,7 +9,7 @@ const Header = () => {
   console.log(loginInfo);
 
   return (
-    <div className="p-3 flex justify-between items-center border">
+    <div className="p-3 flex justify-between items-center border-b  h-20">
       <h1 className="font-garaigit text-3xl sm:text-4xl font-bold ">tasky</h1>
       <div>
         {Object.keys(loginInfo).length !== 0 ? (
@@ -23,11 +23,11 @@ const Header = () => {
           </div>
         ) : (
           <Link
-            className="group/login flex border border-black gap-1 items-center justify-center py-1 px-3 rounded-lg  hover:bg-blue-400 hover:border-blue-400 hover:text-white hover:font-medium duration-300"
+            className="group/login flex border border-black gap-1 items-center justify-center py-1 px-2 lg:px-3 rounded-lg  hover:bg-blue-400 hover:border-blue-400 hover:text-white hover:font-medium duration-300 "
             to="/login"
           >
-            <MdLogin className="text-lg opacity-70 group-hover/login:opacity-100 duration-200" />
-            <h3 className="opacity-70 text-lg font-semibold group-hover/login:opacity-100 duration-200">
+            <MdLogin className="md:text-lg opacity-70 group-hover/login:opacity-100 duration-200" />
+            <h3 className="opacity-70 md:text-lg font-semibold group-hover/login:opacity-100 duration-200">
               Login
             </h3>
           </Link>
